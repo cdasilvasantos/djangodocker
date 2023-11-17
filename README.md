@@ -11,7 +11,7 @@ Django, operating on the Model-View-Controller (MVC) pattern, provides a powerfu
 - Christian Wantong
 - Michael Daniels
 
-### Attendance
+#### Attendance
 [Click Here to View Our Attendance for the 2023 Fall Semester](attendance.md)
 
 ### Prerequisites
