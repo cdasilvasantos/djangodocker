@@ -185,5 +185,5 @@ python3 manage.py test
 ### Conclusion
 You have completed the tutorial on building a Django backend with a database. You have learned how to create migrations, define modeles, use factories for fake data, seed the database, and write tests!
 
-#### Tutorial to Create a TODO Application in Django, using CSRF Tokens
+### Tutorial to Create a TODO Application in Django, using CSRF Tokens
 [Tutorial](instructions_todo.md)
