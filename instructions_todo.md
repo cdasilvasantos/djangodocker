@@ -47,14 +47,14 @@ This tutorial will guide you through the process of creating a simple TODO appli
 
 ## Step 4: Templates and Styling
 
-1. Create HTML templates in the `todo/templates/todo/` directory. In each one of these HTML files, ensure you have '{% load static %}' above the HTML code.
+1. Create HTML templates in the `todo/templates/todo/` directory. In each one of these HTML files, ensure you have `{% load static %}` above the HTML code.
 
     - `todo_list.html`: Display a list of TODO items.
     - `todo_detail.html`: Show details of a single TODO item.
     - `todo_form.html`: Form to add or edit TODO items.
     - `todo_confirm_delete.html`: Confirmation for deleting a TODO item.
 
-2. Style the application using CSS. Create a `style.css` file in `todo/static/todo/`. After this, ensure you add the following link to all the HTML files, '<link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}">'
+2. Style the application using CSS. Create a `style.css` file in `todo/static/todo/`. After this, ensure you add the following link to all the HTML files, `<link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}">`
 
 ## Step 5: Test CRUD Operations
 
