@@ -1,0 +1,36 @@
+<!-- todo/templates/todo/todo_list.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My To-Do Records</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}">
+</head>
+<body>
+    <h1>My To-Do Records</h1>
+
+    <a href="{% url 'todo_create' %}"><button>Add New To-Do</button></a>
+<br>
+<br>
+    <table>
+        <thead>
+            <tr>
+                <th>To-Do</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for todo in todos %}
+            <tr>
+                <td><a href="{% url 'todo_detail' pk=todo.pk %}">{{ todo.title }}</a></td>
+                <td>
+                    <a href="{% url 'todo_update' pk=todo.pk %}"><button>Edit</button></a>
+                    <a href="{% url 'todo_delete' pk=todo.pk %}"><button>Delete</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

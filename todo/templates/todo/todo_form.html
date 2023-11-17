@@ -1,0 +1,20 @@
+<!-- todo/templates/todo/todo_form.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if form.instance.pk %}Edit{% else %}Create{% endif %} TODO</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}">
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Edit{% else %}Create{% endif %} TODO</h1>
+    <form method="post" action="{% if form.instance.pk %}{% url 'todo_update' pk=form.instance.pk %}{% else %}{% url 'todo_create' %}{% endif %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
+    </form>
+    <br>
+    <a href="{% url 'todo_list' %}">Back to TODO List</a>
+</body>
+</html>

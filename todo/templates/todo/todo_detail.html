@@ -1,0 +1,17 @@
+<!-- todo/templates/todo/todo_detail.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ todo.title }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}">
+</head>
+<body>
+    <h1>{{ todo.title }}</h1>
+    <p>{{ todo.description }}</p>
+    <a href="{% url 'todo_update' pk=todo.pk %}">Edit</a> | <a href="{% url 'todo_delete' pk=todo.pk %}">Delete</a>
+    <br>
+    <a href="{% url 'todo_list' %}">Back to TODO List</a>
+</body>
+</html>
