@@ -1,9 +1,14 @@
 # todo/views.py
-from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import TodoItem
 from .forms import TodoForm
-from django.urls import reverse
+
+@login_required
+def todo_list(request):
+    todos = TodoItem.objects.filter(user=request.user)
+    return render(request, 'todo/todo_list.html', {'todos': todos})
+
 
 def todo_list(request):
     todos = TodoItem.objects.all()
