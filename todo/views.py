@@ -8,14 +8,9 @@ from django.contrib.auth import authenticate, login, logout
 
 @login_required
 def todo_list(request):
-    if request.user.is_authenticated:
-        user_greeting = f"Hello, {request.user.username}!"  # Greeting message
-        todos = TodoItem.objects.filter(user=request.user)
-        return render(request, 'todo/todo_list.html', {'user_greeting': user_greeting, 'todos': todos})
-    else:
-        # Redirect to the login page if the user is not authenticated
-        messages.info(request, 'Please log in to view your TODO list.')
-        return redirect('custom_login')  # Adjust this to your custom login view name
+    user_greeting = f"Hello, {request.user.username}!"  # Greeting message
+    todos = TodoItem.objects.filter(user=request.user)
+    return render(request, 'todo/todo_list.html', {'user_greeting': user_greeting, 'todos': todos})
 
 
 @login_required
